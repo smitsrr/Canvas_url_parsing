@@ -21,7 +21,7 @@ I worked with our GA deleloper to use Google Tag Manager and created custom vari
 
 I began by writing a regular expression that would pull out the course ID:
 `(?:/courses/)([0-9]+)` (*note:* sometimes backslashes need to be escaped with "\\")
-If you are interested in learning how regular expressions work, I recommend playing around with <regex101.com>. 
+If you are interested in learning how regular expressions work, I recommend playing around with <https://regex101.com>. 
 
 The second part was figuring out how to get Tag Manager to send the number as an output to GA. I found the easiest way to do this was to write a custom Javascript function. 
 
