@@ -27,3 +27,10 @@ The second part was figuring out how to get Tag Manager to send the number as an
 
 `JAVASCRIPT FUNCTION HERE{
 }`
+
+You can see based on the above URL's the a natural next extension is to send the activity ID as well. We obtained an activity variable script from a neighboring institution which works quite well. It essentially captures the word after the course ID in the URL and sends it as the Activity (e.g., Assignment, Quiz, Discussion). 
+
+The above function needs only be extended by adding non-capturing groups: 
+
+`JAVASCRIPT FUNCTION HERE {
+}`
