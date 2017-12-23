@@ -1,5 +1,5 @@
 Send Canvas Course ID and Activity ID to Google Analytics
-======
+---
 
 How to create custom Javascript variables in Google Tag Manager to parse Canvas URLs to send to Google Analytics. 
 
