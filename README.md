@@ -23,14 +23,21 @@ I began by writing a regular expression that would pull out the course ID:
 `(?:/courses/)([0-9]+)` (*note:* sometimes backslashes need to be escaped with "\\")
 If you are interested in learning how regular expressions work, I recommend playing around with <https://regex101.com>. 
 
-The second part was figuring out how to get Tag Manager to send the number as an output to GA. I found the easiest way to do this was to write a custom Javascript function. 
+The second part was figuring out how to get Tag Manager to send the number as an output to GA. I found the easiest way to do this was to write a custom Javascript function saved into a new variable. 
 
-`JAVASCRIPT FUNCTION HERE{
+`function() {
+   var re = /(?:\/courses\/)([0-9]+)/;
+   var result = re.exec({{Page Path}})
+   return result[1]
 }`
 
 You can see based on the above URL's the a natural next extension is to send the activity ID as well. We obtained an activity variable script from a neighboring institution which works quite well. It essentially captures the word after the course ID in the URL and sends it as the Activity (e.g., Assignment, Quiz, Discussion). 
 
-The above function needs only be extended by adding non-capturing groups: 
+To get the Activity ID the above function needs only be extended by adding non-capturing groups: 
 
-`JAVASCRIPT FUNCTION HERE {
-}`
+`function() {
+    var re = /(?:\/courses\/)(?:[0-9]+\/)(?:[a-zA-Z]+\/)([0-9]+)/;
+    var result = re.exec({{Page Path}})
+    return result[1]
+}
+`
