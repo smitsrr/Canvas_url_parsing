@@ -25,7 +25,7 @@ If you are interested in learning how regular expressions work, I recommend play
 
 The second part was figuring out how to get Tag Manager to send the number as an output to GA. I found the easiest way to do this was to write a custom Javascript function saved into a new variable. 
 
-```
+```javascript
 function() {
    var re = /(?:\/courses\/)([0-9]+)/;
    var result = re.exec({{Page Path}})
@@ -37,7 +37,7 @@ You can see based on the above URL's the a natural next extension is to send the
 
 To get the Activity ID the above function needs only be extended by adding non-capturing groups: 
 
-```
+```javascript
 function() {
     var re = /(?:\/courses\/)(?:[0-9]+\/)(?:[a-zA-Z]+\/)([0-9]+)/;
     var result = re.exec({{Page Path}})
